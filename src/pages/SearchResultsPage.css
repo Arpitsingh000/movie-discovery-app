@@ -1,0 +1,133 @@
+.search-results-page {
+  padding: var(--spacing-xl) 0;
+}
+
+.results-count {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-gray);
+  font-size: 1.1rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  justify-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.loading-message,
+.error-message,
+.no-query-message,
+.no-results-message {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fdeaea;
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: var(--spacing-lg);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty-state h2, .empty-state h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state p {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin: 0 var(--spacing-sm);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #043b63;
+  transform: translateY(-2px);
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-info {
+  margin: 0 var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.current-page {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.total-pages {
+  color: var(--text-gray);
+}
+
+@media (max-width: 992px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pagination-button span {
+    display: none;
+  }
+  
+  .pagination-button {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+  }
+  
+  .results-count {
+    font-size: 0.9rem;
+  }
+}
